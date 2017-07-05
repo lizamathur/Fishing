@@ -1,0 +1,26 @@
+#myFishingGame{
+	border: 5px solid black;
+	background-image: url("Bubbles3.gif");;
+	background-size: cover;
+	margin-left: 25%; 
+	margin-top: 3%;
+}
+body{
+	background-image: url("bg.gif");
+	background-size: cover;
+}
+#space{
+	padding-left: 35%;
+	font-size: 28px;
+	color: #0099e6;
+
+}
+#space1{
+	padding-left: 25%;
+	font-size: 28px;
+	color: #0099e6;
+}
+#collisions,#timer{
+	font-size: 28px;
+	color: #4dc3ff;
+}
