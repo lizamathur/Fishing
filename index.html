@@ -4,7 +4,8 @@
 <style type="text/css">
 	#myFishingGame{
 		border: 1 px solid #d3d3d3;
-		background-color: #ccd9ff;
+		background-image: url("Bubbles3.gif");;
+		background-size: cover;
 		margin-left: 10%; 
 	}
 	div{
@@ -35,16 +36,16 @@
 
 
 	<script type="text/javascript">
+	//		background-color: #ccd9ff;
 	var myHero;
-	//var fish;
 	var fishes=[];
 	var fishCount=9;
 	var collisions=0;
 	var i=60;
+	var check=3;
 	
 	var myGameArea={
 		canvas:document.getElementById("myFishingGame"),
-		//canvas:document.createElement("myFishingGame"),
 		start:function(){
 			this.context=this.canvas.getContext("2d");
 			this.interval=setInterval(updateGameArea,20); //in ms
@@ -60,7 +61,6 @@
 		}
 	}
 
-
 	var startGame=function()
 		{
 			alert("Game Is Starting");
@@ -70,11 +70,11 @@
 			for(var i=0;i<fishCount;i++){
 				var myRandomNo=Math.floor(Math.random() *380+1);
 				var RandomSpeed=Math.floor(Math.random()*4+1);
-				fishes.push(new component(40,20,"smallfish.png",0,myRandomNo,RandomSpeed,"image"));
+				fishes.push(new component(40,20,"fish.png",0,myRandomNo,RandomSpeed,"image"));
 			}
 		}
-//https://www.w3schools.com/graphics/game_images.asp  OR SPRITE
 
+//https://www.w3schools.com/graphics/game_images.asp  OR SPRITE
 	var onTimer=function()
 			{
 				document.getElementById("timer").innerHTML = i;
@@ -86,16 +86,11 @@
 					document.getElementById("timer").innerHTML = 60;
 					collisions=0;
 					document.getElementById("collisions").innerHTML = 0;
-					myHero=new component(40,40,"bigfish.png",400,200,0,"image");
+					myHero=new component(50,50,"bigfish.png",400,200,0,"image");
 					location.reload();
 				}
 			}
-
-
-
-
 	function updateGameArea(){
-
 		myGameArea.clear();
 		myHero.speedX = 0;
 	    myHero.speedY = 0;    
@@ -105,6 +100,7 @@
 	    if (myGameArea.key && myGameArea.key == 40) {myHero.speedY = 3; }
 	    myHero.newPos(); 
 	    myHero.update();   
+
 	    for(var i=0;i<fishCount;i++){
 			fishes[i].x=fishes[i].x+fishes[i].speed;
 			if (fishes[i].x>=myHero.x && fishes[i].x<=myHero.x+myHero.width && fishes[i].y>=myHero.y && fishes[i].y<=myHero.y+myHero.height) 
@@ -121,7 +117,6 @@
 			fishes[i].update();
 		}
 	}
-
 
 
 	function component(width,height,color,x,y,speed,type)
