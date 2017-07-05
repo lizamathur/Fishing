@@ -61,7 +61,7 @@ function updateGameArea(){
 
     for(var i=0;i<fishCount;i++){
 		fishes[i].x=fishes[i].x+fishes[i].speed;
-		if (fishes[i].x>=myHero.x && fishes[i].x<=myHero.x+myHero.width && fishes[i].y>=myHero.y && fishes[i].y<=myHero.y+myHero.height) 
+		if (fishes[i].x+fishes[i].width>myHero.x && fishes[i].y>=myHero.y && fishes[i].y<myHero.y+myHero.height) 
 		{
 			fishes[i].x=0;
 			fishes[i].y=Math.floor(Math.random()*380+1);
