@@ -57,7 +57,7 @@ function updateGameArea(){
     if (myGameArea.key && myGameArea.key == 38) {myHero.speedY = -3; }
     if (myGameArea.key && myGameArea.key == 40) {myHero.speedY = 3; }
     myHero.newPos(); 
-    myHero.update();   
+       
 
     for(var i=0;i<fishCount;i++){
 		fishes[i].x=fishes[i].x+fishes[i].speed;
@@ -74,6 +74,7 @@ function updateGameArea(){
 		}
 		fishes[i].update();
 	}
+	myHero.update();
 }
 
 
