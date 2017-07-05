@@ -38,7 +38,7 @@ var onTimer=function()
 			document.getElementById("timer").innerHTML = i;
 			i--;
 			setTimeout(onTimer, 1000);
-			if(i==-1){
+			if(i==-2){
 				alert("Game Over");
 				i=60;
 				document.getElementById("timer").innerHTML = 60;
