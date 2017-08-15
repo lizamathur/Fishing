@@ -3,8 +3,6 @@ var fishes=[];
 var fishCount=9;
 var collisions=0;
 var i=60;
-var check=3;
-
 var myGameArea={
 	canvas:document.getElementById("myFishingGame"),
 	start:function(){
